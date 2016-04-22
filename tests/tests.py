@@ -39,6 +39,14 @@ class ExtendTests(unittest.TestCase):
         pm.load_from_dotted_paths(['dev.null'])
         assert len(pm.plugins) == 0
 
+        pm = PluginManager(ExampleBasePlugin)
+        pm.load_from_dotted_paths(['sys.path'])
+        assert len(pm.plugins) == 0
+
+        pm = PluginManager(ExampleBasePlugin)
+        pm.load_from_callables(['dev.null'])
+        assert len(pm.plugins) == 0
+
 
 
 if __name__ == '__main__':
