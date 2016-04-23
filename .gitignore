@@ -1,4 +1,4 @@
 env
 *.pyc
 .coverage
-extend.egg-info/
+plugout.egg-info/

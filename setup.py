@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 VERSION = '0.1.0'
 
 setup(
-    name='extend',
+    name='plugout',
     description="A simple plugin manager",
     version='0.1',
     packages=find_packages(),
@@ -14,8 +14,8 @@ setup(
     tests_require=['coverage'],
     author='Maxime Beauchemin',
     author_email='maximebeauchemin@gmail.com',
-    url='https://github.com/misetrcrunch/extend',
-    download_url=('https://github.com/mistercrunch/extend/tarball/' + VERSION),
+    url='https://github.com/misetrcrunch/plugout',
+    download_url=('https://github.com/mistercrunch/plugout/tarball/' + VERSION),
     classifiers=[
         'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3.4',

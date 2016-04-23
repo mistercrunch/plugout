@@ -1,6 +1,6 @@
-# Extend
+# Plugout
 
-Extend is the simplest plugin manager for Python.
+Plugout is the simplest plugin manager for Python.
 
 Given a BasePlugin provided by your app
 
@@ -17,7 +17,7 @@ Provided a derivative added externally to your app
 Now given discover the plugins from your app, using a dotted notation to
 the package.module.ClassName:
 
-    from extend import PluginManager
+    from plugout import PluginManager
     from yourapp.pluginmanager import BaseSuperPlugin
 
     pm = PluginManager(base_class=BaseSuperPlugin)

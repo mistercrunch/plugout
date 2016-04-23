@@ -1,4 +1,4 @@
-from extend.examples.base import ExampleBasePlugin
+from plugout.examples.base import ExampleBasePlugin
 
 class SamplePlugin(ExampleBasePlugin):
 

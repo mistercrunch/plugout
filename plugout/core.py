@@ -1,4 +1,4 @@
-"""Base module for extend"""
+"""Base module for plugout"""
 from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
@@ -18,7 +18,7 @@ class PluginManager(object):
 
     def __init__(self, base_class=object):
         """
-        :param base_class: The base class that plugins are extending
+        :param base_class: The base class that plugins are plugouting
         :type base_class: object
         """
         self.base_class = base_class

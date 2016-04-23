@@ -1,16 +1,16 @@
-"""Unit tests for extend"""
+"""Unit tests for plugout"""
 import os
 import unittest
-from extend import PluginManager
-from extend.examples.base import ExampleBasePlugin
-from extend.examples import sample_plugin
+from plugout import PluginManager
+from plugout.examples.base import ExampleBasePlugin
+from plugout.examples import sample_plugin
 
-SAMPLE_PLUGIN_PATH = 'extend.examples.sample_plugin.SamplePlugin'
-SAMPLE_PLUGIN_PATH_CALLABLE = 'extend.examples.sample_plugin_callable.get_plugin'
+SAMPLE_PLUGIN_PATH = 'plugout.examples.sample_plugin.SamplePlugin'
+SAMPLE_PLUGIN_PATH_CALLABLE = 'plugout.examples.sample_plugin_callable.get_plugin'
 EXAMPLE_FOLDER = os.path.dirname(sample_plugin.__file__)
 
 
-class ExtendTests(unittest.TestCase):
+class PlugoutTests(unittest.TestCase):
 
     def _hello(self, hw_plugin):
         assert "Hello world" == hw_plugin.get_hello() + " " + hw_plugin.get_world()
