@@ -2,6 +2,7 @@
 [![PyPI](https://img.shields.io/pypi/pyversions/plugout.svg?maxAge=2592000)](https://pypi.python.org/pypi/plugout)
 [![PyPI](https://img.shields.io/pypi/v/plugout.svg?maxAge=2592000)](https://pypi.python.org/pypi/plugout)
 [![Code Health](https://landscape.io/github/mistercrunch/plugout/master/landscape.svg?style=flat)](https://landscape.io/github/mistercrunch/plugout/master)
+[![Coverage Status](https://coveralls.io/repos/github/mistercrunch/plugout/badge.svg?branch=master)](https://coveralls.io/github/mistercrunch/plugout?branch=master)
 
 
 # Plugout
