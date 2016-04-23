@@ -1,3 +1,9 @@
+[![Build Status](https://travis-ci.org/mistercrunch/plugout.svg?branch=master)](https://travis-ci.org/mistercrunch/plugout)
+[![PyPI](https://img.shields.io/pypi/pyversions/plugout.svg?maxAge=2592000)](https://pypi.python.org/pypi/plugout)
+[![PyPI](https://img.shields.io/pypi/v/plugout.svg?maxAge=2592000)](https://pypi.python.org/pypi/plugout)
+[![Code Health](https://landscape.io/github/mistercrunch/plugout/master/landscape.svg?style=flat)](https://landscape.io/github/mistercrunch/plugout/master)
+
+
 # Plugout
 
 Plugout is the simplest plugin manager for Python.
