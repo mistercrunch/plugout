@@ -7,7 +7,10 @@ from plugout.examples import sample_plugin
 
 SAMPLE_PLUGIN_PATH = 'plugout.examples.sample_plugin.SamplePlugin'
 SAMPLE_PLUGIN_PATH_CALLABLE = 'plugout.examples.sample_plugin_callable.get_plugin'
-EXAMPLE_FOLDER = os.path.dirname(sample_plugin.__file__)
+EXAMPLE_FOLDER = os.path.abspath(sample_plugin.__file__)
+
+if EXAMPLE_FOLDER.endswith('.pyc'):
+    EXAMPLE_FOLDER = EXAMPLE_FOLDER[:-1]
 
 
 class PlugoutTests(unittest.TestCase):
