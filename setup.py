@@ -11,7 +11,7 @@ setup(
     zip_safe=False,
     scripts=[],
     install_requires=[],
-    tests_require=['coverage'],
+    tests_require=['coverage', 'coveralls'],
     author='Maxime Beauchemin',
     author_email='maximebeauchemin@gmail.com',
     url='https://github.com/misetrcrunch/plugout',

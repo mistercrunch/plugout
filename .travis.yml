@@ -4,5 +4,7 @@ python:
   - "3.4"
   - "3.5"
 script: bash run_tests.sh
+install:
+  - pip install coveralls
 after_success:
   - coveralls

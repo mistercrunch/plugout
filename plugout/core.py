@@ -95,6 +95,7 @@ class PluginManager(object):
         :type path_reference: str
         """
         norm_pattern = re.compile(r'[/|.]')
+
         def process_file(filepath):
             mod_name, file_ext = os.path.splitext(
                 os.path.split(filepath)[-1])

@@ -2,6 +2,7 @@
 
 
 class ExampleBasePlugin(object):
+
     """A very simple example of a plugin's base class"""
 
     @staticmethod
