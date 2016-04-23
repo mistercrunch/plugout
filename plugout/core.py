@@ -95,24 +95,34 @@ class PluginManager(object):
         :type path_reference: str
         """
         norm_pattern = re.compile(r'[/|.]')
-        for root, dirs, files in os.walk(path_reference, followlinks=followlinks):
+        def process_file(filepath):
+            mod_name, file_ext = os.path.splitext(
+                os.path.split(filepath)[-1])
+            if file_ext != '.py':
+                return
+
+            # normalize root path as namespace
+            namespace = '_'.join([
+                re.sub(norm_pattern, '__', os.path.dirname(filepath)), mod_name])
+
+            m = imp.load_source(namespace, filepath)
+            for obj in list(m.__dict__.values()):
+                if self._is_plugin(obj):
+                    self._add_plugin(obj)
+
+        if os.path.isfile(path_reference):
+            process_file(path_reference)
+            return
+
+        for root, dirs, files in os.walk(
+                path_reference, followlinks=followlinks):
             for f in files:
                 try:
                     filepath = os.path.join(root, f)
                     if not os.path.isfile(filepath):
                         continue
-                    mod_name, file_ext = os.path.splitext(
-                        os.path.split(filepath)[-1])
-                    if file_ext != '.py':
-                        continue
-
-                    # normalize root path as namespace
-                    namespace = '_'.join([re.sub(norm_pattern, '__', root), mod_name])
-
-                    m = imp.load_source(namespace, filepath)
-                    for obj in list(m.__dict__.values()):
-                        if self._is_plugin(obj):
-                            self._add_plugin(obj)
+                    else:
+                        process_file(filepath)
                 except Exception as e:
                     logging.exception(e)
                     logging.error('Failed to import plugin {}'.format(filepath))

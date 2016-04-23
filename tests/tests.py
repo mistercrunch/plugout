@@ -24,8 +24,9 @@ class PlugoutTests(unittest.TestCase):
     def test_os_walk(self):
         pm = PluginManager(ExampleBasePlugin)
         pm.load_from_filepath(EXAMPLE_FOLDER)
-        assert len(pm.plugins) >= 1
-        self._hello(pm.plugins[0])
+        plugins = [p for p in pm.plugins if p.__name__ == 'SamplePlugin']
+        assert len(plugins) == 1
+        self._hello(plugins[0])
 
     def test_from_callable(self):
         pm = PluginManager(ExampleBasePlugin)
