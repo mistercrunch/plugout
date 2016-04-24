@@ -79,7 +79,7 @@ class PluginManager(object):
                 logging.exception(e)
             else:
                 if hasattr(f, '__call__'):
-                    plugin = f()
+                    plugin = f(self.base_class)
                     self._add_plugin(plugin)
                 else:
                     logging.error("{} doesn't appear to be callable".format(f))

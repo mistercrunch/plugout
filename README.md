@@ -5,7 +5,7 @@
 [![Coverage Status](https://coveralls.io/repos/github/mistercrunch/plugout/badge.svg?branch=master)](https://coveralls.io/github/mistercrunch/plugout?branch=master)
 
 
-# Plugout
+# PlugOut
 
 Plugout is a plugin manager for Python.
 
@@ -64,4 +64,6 @@ case you can reference a dotted object reference to a callable
 
     # where conf.get('PLUGIN_CALLABLES') is a dotted Python reference to
     # callables expected to return a derivative of BaseFilterPlugin
+    # Note that the callable you define will be passed base_class as the first
+    # argument
     pm.load_from_callables(conf.get('PLUGIN_CALLABLES'))
